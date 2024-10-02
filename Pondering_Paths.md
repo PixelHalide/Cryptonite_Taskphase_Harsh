@@ -38,3 +38,7 @@ Then executed ./challenge/run as instructed in the question
 ## implicit relative path
 
 cd'd into /challenge, then ran ./run to explicitly run the file
+
+## home sweet home
+
+we must make a file inside our home directory (~), so i make a file named "a" by doing **touch a**, to keep the file name small. then we run **/challenge/run ~/a**, which gives us the required flag.
