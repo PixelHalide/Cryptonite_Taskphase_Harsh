@@ -37,5 +37,3 @@ Redirect the errors of the program into the standard output by using the >& oper
 We first have to pipe the error message into another file to see what the issue is. we do this by doing **/challenge/pwn | tee output1 | /challenge/college**, where the output is added to output 1. after this we can do cat output1. it tells us to use the --secret flag with a given secret key. **/challenge/pwn --secret A6C249ip | /challenge/college** then gives us the flag.
 
 ## Writing to multiple programs
-
-
