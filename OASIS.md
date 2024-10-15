@@ -110,6 +110,73 @@ I then look through the PNG specification, and find that the header of the file 
 
 I inspect element the page and try to find something. Nothing was found. I try to look through the cookies, But nothing was found. Somehow the website is authenticating us without storing anything on our machine. This means that everything is done on their server. Doing research online suggest packet manipulation. I come across Burp Suite, An application just for doing this. I intercept the packets going from my browser to the website.
 
+I intercepted the outgoing packets to make myself look like an OASIS user with the following packet:
+
+```POST /game?player=OASIS HTTP/1.1
+Host: startgame.oasis.cryptonite.live
+Content-Length: 36
+Sec-Ch-Ua: "Not;A=Brand";v="24", "Chromium";v="128"
+Content-Type: application/json
+Accept-Language: en-GB,en;q=0.9
+Sec-Ch-Ua-Mobile: ?0
+User-Agent: OASISPlayer
+Sec-Ch-Ua-Platform: "macOS"
+Accept: /
+Origin: https://startgame.oasis.cryptonite.live/
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: https://startgame.oasis.cryptonite.live/?name=cryptonite
+Accept-Encoding: gzip, deflate, br
+Priority: u=1, i
+X-OASIS-Player: true
+```
+It then tells us we have to add the name of the project as an argument. I change the player into "name". I ask with an admin if the case matters, It doesn't.
+
+```
+POST /game?name=CRYPTONITE HTTP/1.1
+Host: startgame.oasis.cryptonite.live
+Content-Length: 36
+Sec-Ch-Ua: "Not;A=Brand";v="24", "Chromium";v="128"
+Content-Type: application/json
+Accept-Language: en-GB,en;q=0.9
+Sec-Ch-Ua-Mobile: ?0
+User-Agent: OASISPlayer
+Sec-Ch-Ua-Platform: "macOS"
+Accept: /
+Origin: https://startgame.oasis.cryptonite.live/
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: https://startgame.oasis.cryptonite.live/?name=cryptonite
+Accept-Encoding: gzip, deflate, br
+Priority: u=1, i
+X-OASIS-Player: true
+```
+
+Finally, It asks to input the rank of cryptonite on CTFTIME as an argument. there was initially some confusion as to whether it was the national or international rank, but an admin cleared it up by stating it was supposed to be national.
+
+```
+POST /givemetheFlag?name=CRYPTONITE&rank=4 HTTP/1.1
+Host: startgame.oasis.cryptonite.live
+Content-Length: 36
+Sec-Ch-Ua: "Not;A=Brand";v="24", "Chromium";v="128"
+Content-Type: application/json
+Accept-Language: en-GB,en;q=0.9
+Sec-Ch-Ua-Mobile: ?0
+User-Agent: OASISPlayer
+Sec-Ch-Ua-Platform: "macOS"
+Accept: /
+Origin: https://startgame.oasis.cryptonite.live/
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: https://startgame.oasis.cryptonite.live/?name=cryptonite
+Accept-Encoding: gzip, deflate, br
+Priority: u=1, i
+X-OASIS-Player: true 
+```
+
 ## A Rocky Start
 
 I download Unity and play the game. There's no way to shoot or do anything useful. As a kid, I've used Cheat Engine a lot in video games. I'd make my health/ammo/money go infinite. So I try to do the same thing. I go in and try to change my score to a 100. But then I realise I have to change my score value atleast once to actually do this. 
