@@ -18,4 +18,8 @@ We set the PATH as the folder win is in, that is in /challenge/more_commands. we
 
 ## Adding commands
 
-we first start by creating a shell script to print out the flag with this command: **echo "cat /flag" > win**. then we make it executable with chmod +x win, and find the location where cat is located with with **which cat**. since we're gonna change the path, we need to define the program to use the absolute program of cat. we do it with this: **echo /bin/cat /flag**. we then set our path to the current directory with **PATH=""** and run /challenge/run to get the flag.
+we first start by creating a shell script to print out the flag with this command: **echo "cat /flag" > win**. then we make it executable with **chmod +x win**, and find the location where cat is located with with **which cat**. since we're gonna change the path, we need to define the program to use the absolute program of cat. we do it with this: **echo "/run/workspace/bin/cat /flag" >> win**. we then set our path to the current directory and the location of cat with **PATH="$HOME:/bin"** and run /challenge/run to get the flag.
+
+## Hijacking Commands
+
+we first make a shell script named rm and have the contents print out flag with this command: **echo "cat /flag" > rm**, then make it executable with **chmod +x rm**. we then set the path location for the current home directory for rm, and bin for cat with **PATH="$HOME:/bin"**, then run /challenge/run to get the flag.
