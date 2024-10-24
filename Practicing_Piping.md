@@ -42,4 +42,4 @@ we learn about process substituion >(), which we can use to take the input or ou
 
 ## Split-piping stderr and stdout
 
-i originally tried to do **/challenge/hack > /challenge/planet 2> /challenge/the**, but then realised this doesn't work because > only works for writing to FILES, and we have to use process substitution if we want to give the output to a command instead.
+i originally tried to do **/challenge/hack > /challenge/planet 2> /challenge/the**, but then realised this doesn't work because > only works for writing to FILES, and we have to use process substitution if we want to give the output to a command instead. **/challenge/hack > >(/challenge/planet) 2> >(/challenge/the)** yields us the flag.
