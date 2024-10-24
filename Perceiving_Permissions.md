@@ -10,7 +10,7 @@ we learn about the chgrp command, which functions effectively the same as chown,
 
 ## Fun with group names
 
-we're no longer in the hacker group, and in some other group that we don't know the name of. we can simply do **id** to get our group name. then we do a simple **chgrp hacker (new group name)** and print the flag.
+we're no longer in the hacker group, and in some other group that we don't know the name of. we can simply do **id** to get our group name. then we do a simple **chgrp (new group name) /flag** and print the flag with cat.
 
 ## Changing Permissions
 
@@ -38,7 +38,7 @@ after this, we can finally change flag to be readable by doing **chmod +r /flag*
 
 ## Permissions Setting Practice
 
-mostly the same thing, but we use = instead here, which makes it faster since we don't have to see the difference between the current and required permissions, just what's the requiredp permissions.
+mostly the same thing, but we use = instead here, which makes it faster since we don't have to see the difference between the current and required permissions, just what the required permissions are.
 ```
 chmod u=r,g=rw,o=x /challenge/pwn
 chmod u=,g=rwx,o=rw /challenge/pwn

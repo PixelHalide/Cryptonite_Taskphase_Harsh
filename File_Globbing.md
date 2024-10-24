@@ -33,5 +33,5 @@ i think for a while, and realise those 3 words are the only words that start wit
 
 ## Exclusionary globbing
 
-cd into /challenge/files, and just do /challenge/run [!pwn]** as instructed for the flag.
+cd into /challenge/files, and just do /challenge/run [!pwn]* as instructed for the flag.
 
