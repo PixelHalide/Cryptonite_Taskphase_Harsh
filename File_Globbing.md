@@ -2,7 +2,7 @@
 
 ## Matching with *
 
-we have to cd into challenge while keeping the total wordcount under 4. since * autocompletes the words for us, we can just use that. **cd /ch**, then just ./run to get the flag.
+we have to cd into challenge while keeping the total wordcount under 4. since * autocompletes the words for us, we can just use that. cd /ch**, then just ./run to get the flag.
 
 ## Matching with ?
 
@@ -10,11 +10,11 @@ since we can't use c and l, just replace those characters in challenge with ?, s
 
 ## Matching with []
 
-we cd into /challenge/files as instructed. then we have to execute run with the files file_a, file_s, file_h, file_b as an argument. we can just do **/challenge/run file_[absh]** to then get the key.
+we cd into /challenge/files as instructed. then we have to execute run with the files file_a, file_s, file_h, file_b as an argument. we can just do /challenge/run file_[absh]** to then get the key.
 
 ## Matching paths with []
 
-execute **/challenge/run /challenge/files/file_[absh]**, with the absolute address of the file locations.
+execute /challenge/run /challenge/files/file_[absh]**, with the absolute address of the file locations.
 
 ## Mixing globs
 
@@ -33,5 +33,5 @@ i think for a while, and realise those 3 words are the only words that start wit
 
 ## Exclusionary globbing
 
-cd into /challenge/files, and just do **/challenge/run [!pwn]** as instructed for the flag.
+cd into /challenge/files, and just do /challenge/run [!pwn]** as instructed for the flag.
 
